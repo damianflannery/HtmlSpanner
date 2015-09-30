@@ -7,18 +7,13 @@ buildscript {
     }
 }
 
-apply plugin: 'android-library'
+apply plugin: 'com.android.application'
 
 repositories {
     mavenCentral()
     maven {
         url "http://repo.pageturner-reader.org"
     }
-}
-
-dependencies {
-    compile 'net.sourceforge.htmlcleaner:htmlcleaner:2.2'
-    compile 'com.osbcp.cssparser:cssparser:1.5'
 }
 
 android {
@@ -35,6 +30,11 @@ android {
     lintOptions {
          abortOnError false
     }
+}
+
+dependencies {
+    compile 'net.sourceforge.htmlcleaner:htmlcleaner:2.14'
+    compile 'cssparser:cssparser:0.9.4'
 }
 
 apply plugin: 'sonar-runner'
